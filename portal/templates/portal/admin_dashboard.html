@@ -1,0 +1,401 @@
+<html>
+    <head>
+        <title>Rental ERP</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    </head>
+    <body style="margin: 0px;">
+        <div class="top">
+            <h2 style="float: left;">Rental ERP</h2>
+            {% csrf_token %}
+            <a class="nav-item btn" style="text-decoration: none;color: black;" href="{% url 'user_logout' %}">Logout</a>
+        </div>
+        <div class="bottom">
+            <div class="container">
+                <div class="card-deck">
+                    {% load static %}
+                    {% for shop in shops %}
+                    
+                    <div class="card bg-warning">
+                        <div class="card-body">
+                                <h2 class="title text-center">{{ shop.shop_name }}</h2>
+                                <table class="table table-hover table-borderless">
+                                    <tr>
+                                        <th>Tenant Name</th>
+                                        <td>{{ shop.tenant_name }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Monthly Rent</th>
+                                        <td>{{ shop.rent }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Pending</th>
+                                        <td>000000</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Contract Ending Date</th>
+                                        <td>{{ shop.datetime }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Contact Number</th>
+                                        <td>{{ shop.phone_number }}</td>
+                                    </tr>
+                                </table>
+                                <button type="button" class="btn btn-block btn-success" style="position: relative;">Verify</button>
+                        </div>                            
+                    </div>
+                    {% endfor %}
+                    <!-- <div class="card bg-warning">
+                        <div class="card-body text-center">
+                            <h2 class="title">Shop Name</h2>
+                            <table class="table table-hover table-borderless">
+                                <tr>
+                                    <th>Tenant Name</th>
+                                    <td>Lorium Epsum</td>
+                                </tr>
+                                <tr>
+                                    <th>Monthly Rent</th>
+                                    <td>000000</td>
+                                </tr>
+                                <tr>
+                                    <th>Pending</th>
+                                    <td>000000</td>
+                                </tr>
+                                <tr>
+                                    <th>Contract Ending Date</th>
+                                    <td>00/00/00</td>
+                                </tr>
+                                <tr>
+                                    <th>Contact Number</th>
+                                    <td>0000000000</td>
+                                </tr>
+                            </table>
+                            <button type="button" class="btn btn-block btn-success" style="position: relative;">Verify</button>
+                        </div>   
+                    </div>
+                    <div class="card bg-warning">
+                        <div class="card-body text-center">
+                            <h2 class="title">Shop Name</h2>
+                            <table class="table table-hover table-borderless">
+                                <tr>
+                                    <th>Tenant Name</th>
+                                    <td>Lorium Epsum</td>
+                                </tr>
+                                <tr>
+                                    <th>Monthly Rent</th>
+                                    <td>000000</td>
+                                </tr>
+                                <tr>
+                                    <th>Pending</th>
+                                    <td>000000</td>
+                                </tr>
+                                <tr>
+                                    <th>Contract Ending Date</th>
+                                    <td>00/00/00</td>
+                                </tr>
+                                <tr>
+                                    <th>Contact Number</th>
+                                    <td>0000000000</td>
+                                </tr>
+                            </table>
+                            <button type="button" class="btn btn-block btn-success" style="position: relative;">Verify</button>
+                        </div>   
+                    </div>
+                    <div class="card bg-warning">
+                        <div class="card-body text-center">
+                            <h2 class="title">Shop Name</h2>
+                            <table class="table table-hover table-borderless">
+                                <tr>
+                                    <th>Tenant Name</th>
+                                    <td>Lorium Epsum</td>
+                                </tr>
+                                <tr>
+                                    <th>Monthly Rent</th>
+                                    <td>000000</td>
+                                </tr>
+                                <tr>
+                                    <th>Pending</th>
+                                    <td>000000</td>
+                                </tr>
+                                <tr>
+                                    <th>Contract Ending Date</th>
+                                    <td>00/00/00</td>
+                                </tr>
+                                <tr>
+                                    <th>Contact Number</th>
+                                    <td>0000000000</td>
+                                </tr>
+                            </table>
+                            <button type="button" class="btn btn-block btn-success" style="position: relative;">Verify</button>
+                        </div>   
+                    </div>
+                    <div class="card bg-warning">
+                        <div class="card-body text-center">
+                            <h2 class="title">Shop Name</h2>
+                            <table class="table table-hover table-borderless">
+                                <tr>
+                                    <th>Tenant Name</th>
+                                    <td>Lorium Epsum</td>
+                                </tr>
+                                <tr>
+                                    <th>Monthly Rent</th>
+                                    <td>000000</td>
+                                </tr>
+                                <tr>
+                                    <th>Pending</th>
+                                    <td>000000</td>
+                                </tr>
+                                <tr>
+                                    <th>Contract Ending Date</th>
+                                    <td>00/00/00</td>
+                                </tr>
+                                <tr>
+                                    <th>Contact Number</th>
+                                    <td>0000000000</td>
+                                </tr>
+                            </table>
+                            <button type="button" class="btn btn-block btn-success" style="position: relative;">Verify</button>
+                        </div>
+                    </div>   
+                    <div class="card bg-warning">
+                            <div class="card-body text-center">
+                                <h2 class="title">Shop Name</h2>
+                                <table class="table table-hover table-borderless">
+                                    <tr>
+                                        <th>Tenant Name</th>
+                                        <td>Lorium Epsum</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Monthly Rent</th>
+                                        <td>000000</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Pending</th>
+                                        <td>000000</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Contract Ending Date</th>
+                                        <td>00/00/00</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Contact Number</th>
+                                        <td>0000000000</td>
+                                    </tr>
+                                </table>
+                                <button type="button" class="btn btn-block btn-success" style="position: relative;">Verify</button>
+                            </div>                            
+                    </div>
+                    <div class="card bg-warning">
+                            <div class="card-body text-center">
+                                <h2 class="title">Shop Name</h2>
+                                <table class="table table-hover table-borderless">
+                                    <tr>
+                                        <th>Tenant Name</th>
+                                        <td>Lorium Epsum</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Monthly Rent</th>
+                                        <td>000000</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Pending</th>
+                                        <td>000000</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Contract Ending Date</th>
+                                        <td>00/00/00</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Contact Number</th>
+                                        <td>0000000000</td>
+                                    </tr>
+                                </table>
+                                <button type="button" class="btn btn-block btn-success" style="position: relative;">Verify</button>
+                            </div>                            
+                    </div>
+                    <div class="card bg-warning">
+                            <div class="card-body text-center">
+                                <h2 class="title">Shop Name</h2>
+                                <table class="table table-hover table-borderless">
+                                    <tr>
+                                        <th>Tenant Name</th>
+                                        <td>Lorium Epsum</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Monthly Rent</th>
+                                        <td>000000</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Pending</th>
+                                        <td>000000</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Contract Ending Date</th>
+                                        <td>00/00/00</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Contact Number</th>
+                                        <td>0000000000</td>
+                                    </tr>
+                                </table>
+                                <button type="button" class="btn btn-block btn-success" style="position: relative;">Verify</button>
+                            </div>                            
+                    </div>
+                    <div class="card bg-warning">
+                            <div class="card-body text-center">
+                                <h2 class="title">Shop Name</h2>
+                                <table class="table table-hover table-borderless">
+                                    <tr>
+                                        <th>Tenant Name</th>
+                                        <td>Lorium Epsum</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Monthly Rent</th>
+                                        <td>000000</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Pending</th>
+                                        <td>000000</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Contract Ending Date</th>
+                                        <td>00/00/00</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Contact Number</th>
+                                        <td>0000000000</td>
+                                    </tr>
+                                </table>
+                                <button type="button" class="btn btn-block btn-success" style="position: relative;">Verify</button>
+                            </div>                            
+                    </div>
+                    <div class="card bg-warning">
+                            <div class="card-body text-center">
+                                <h2 class="title">Shop Name</h2>
+                                <table class="table table-hover table-borderless">
+                                    <tr>
+                                        <th>Tenant Name</th>
+                                        <td>Lorium Epsum</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Monthly Rent</th>
+                                        <td>000000</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Pending</th>
+                                        <td>000000</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Contract Ending Date</th>
+                                        <td>00/00/00</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Contact Number</th>
+                                        <td>0000000000</td>
+                                    </tr>
+                                </table>
+                                <button type="button" class="btn btn-block btn-success" style="position: relative;">Verify</button>
+                            </div>                            
+                    </div>
+                    <div class="card bg-warning">
+                            <div class="card-body text-center">
+                                <h2 class="title">Shop Name</h2>
+                                <table class="table table-hover table-borderless">
+                                    <tr>
+                                        <th>Tenant Name</th>
+                                        <td>Lorium Epsum</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Monthly Rent</th>
+                                        <td>000000</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Pending</th>
+                                        <td>000000</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Contract Ending Date</th>
+                                        <td>00/00/00</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Contact Number</th>
+                                        <td>0000000000</td>
+                                    </tr>
+                                </table>
+                                <button type="button" class="btn btn-block btn-success" style="position: relative;">Verify</button>
+                            </div>                            
+                    </div>
+                    <div class="card bg-warning">
+                        <div class="card-body text-center">
+                            <h2 class="title">Shop Name</h2>
+                            <table class="table table-hover table-borderless">
+                                <tr>
+                                    <th>Tenant Name</th>
+                                    <td>Lorium Epsum</td>
+                                </tr>
+                                <tr>
+                                    <th>Monthly Rent</th>
+                                    <td>000000</td>
+                                </tr>
+                                <tr>
+                                    <th>Pending</th>
+                                    <td>000000</td>
+                                </tr>
+                                <tr>
+                                    <th>Contract Ending Date</th>
+                                    <td>00/00/00</td>
+                                </tr>
+                                <tr>
+                                    <th>Contact Number</th>
+                                    <td>0000000000</td>
+                                </tr>
+                            </table>
+                            <button type="button" class="btn btn-block btn-success" style="position: relative;">Verify</button>
+                        </div>                            
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        .body{
+    padding: 0px;
+    height: 100%;
+    width: 100%;
+    color: white;
+}
+.top{
+    border-bottom: 1px solid orange;
+    height: 12%;
+    width: 100%;
+    padding: 5px;
+    background-color :black;
+}
+.bottom{
+    position: relative;
+    width: 100%; 
+    padding: 5px;
+    background-color: black;
+}
+h2{
+    color: orange;
+}
+.container{
+    margin-top: 5%;
+}
+.card{
+
+    min-height: 300px;
+    margin: 2%;
+    min-width: 500px;
+}
+.title{
+    color: red;
+}
+table,td,th{
+    border: 0px;
+}
+</style>
+</html>
