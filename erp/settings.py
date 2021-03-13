@@ -165,6 +165,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['192.168.{}.{}'.format(i,j) for i in range(256) for j in range(256)]
 ALLOWED_HOSTS+= ['127.0.0.1']
+ALLOWED_HOSTS+= ['https://rentalerp.herokuapp.com/']
 
 # Application definition
 
