@@ -259,3 +259,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 LOGIN_URL= '/erp/shop_login/'
 LOGIN_REDIRECT_URL= '/erp/shop_login/'
+
+# Configure Django App for Heroku.
+import django_heroku
+django_heroku.settings(locals())
+
+TEST_RUNNER = 'django_heroku.HerokuDiscoverRunner'
