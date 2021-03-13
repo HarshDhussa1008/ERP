@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 """
 Django settings for erp project.
 
@@ -129,8 +128,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 LOGIN_URL= '/erp/shop_login/'
 LOGIN_REDIRECT_URL= '/erp/shop_login/'
-import django_heroku
-=======
+
 """
 Django settings for erp project.
 
@@ -261,6 +259,3 @@ USE_TZ = True
 STATIC_URL = '/static/'
 LOGIN_URL= '/erp/shop_login/'
 LOGIN_REDIRECT_URL= '/erp/shop_login/'
-import django_heroku
->>>>>>> 008a695826266e58329f79713514168e65f315ee
-django_heroku.settings(locals())
